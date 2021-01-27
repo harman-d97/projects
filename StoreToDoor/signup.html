@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+    Name:           Harmanpreet Dhillon, 000816379
+    Date:           Dec 13th, 2020
+    Description:    Signup page for Store to Door online grocery website 
+-->
+<html>
+
+<head>
+    <title>Store to Door - Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#submit").click(function(e) {
+                e.preventDefault();
+                let url = "newuser.php?username=" + $('input[name=username]').val() + "&password=" + 
+                            $('input[name=password]').val() + "&name=" + $('input[name=name]').val() + 
+                            "&address=" + $('input[name=street]').val() + "&city=" + $('input[name=city]').val() + 
+                            "&province=" + $('input[name=province]').val() + "&postalcode=" + 
+                            $('input[name=postalcode]').val() + "&creditcard=" + $('input[name=creditcard]').val() + 
+                            "&month=" + $('input[name=month]').val() + "&year=" + $('input[name=year]').val() + 
+                            "&cvc=" + $('input[name=cvc]').val();
+                fetch(url, {credentials: "include"})
+                .then(response => response.text())
+                .then(function(text) {
+                    $("#result").html(text);
+                })
+
+            })
+        })
+    </script>
+    <style>
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto 400px;
+            background-color: lightyellow;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .title h1 {
+            color: rgb(40, 161, 40);
+        }
+
+        form {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            background-color: rgb(202, 192, 192);
+            float: center;
+            padding-bottom: 170px;
+            padding-top: 20px;
+            clear: both;
+        }
+
+        .input {
+            float: left;
+            margin: 5px 5px 5px 20px;
+            border: 1px solid;
+            border-radius: 2px;
+        }
+
+        form label {
+            float: left;
+            clear: left;
+            text-align: right;
+            width: 150px;
+            margin: 5px;
+        }
+
+        #submit {
+            display: block;
+            float: right;
+            clear: both;
+            margin: 20px;
+        }
+
+        #result {
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="name">
+            <h1>Store to Door</h1>
+        </div>
+
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.php">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="cart.php">Shopping Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="title">
+            <h1>Sign Up</h1>
+        </div>
+        <div>
+            <form>
+                <label>Name</label>
+                <input type="text" name="name" class="input" required><br>
+                <label>Username</label>
+                <input type="text" name="username" class="input" placeholder="max 20 characters" required><br>
+                <label>Password</label>
+                <input type="text" name="password" class="input" placeholder="max 20 characters" required><br>
+                <label>Street Address</label>
+                <input type="text" name="street" class="input" required><br>
+                <label>City</label>
+                <input type="text" name="city" class="input" required><br>
+                <label>Province</label>
+                <input type="text" name="province" class="input" value="ON"><br>
+                <label>Postal Code</label>
+                <input type="text" name="postalcode" class="input" required><br>
+                <label>Credit Card Number</label>
+                <input type="number" name="creditcard" class="input" required><br>
+                <label>Exp Month</label>
+                <input type="number" name="month" class="input" min="1" placeholder="Enter with no zeros" required><br>
+                <label>Exp Year</label>
+                <input type="number" name="year" class="input" min="2020" required><br>
+                <label>CVC Code</label>
+                <input type="number" name="cvc" class="input" required><br>
+                <input type="submit" value="Sign Up" id="submit">
+            </form>
+        </div>
+
+        <div>
+            <p id="result"></p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <img src="images/footer.jpg" alt="footer">
+    </footer>
+
+
+</body>
+
+</html>

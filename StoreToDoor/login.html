@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+    Name:           Harmanpreet Dhillon, 000816379
+    Date:           Dec 13th, 2020
+    Description:    Login page for Store to Door online grocery website 
+                    After successfull login it redirects to the main page 
+-->
+<html>
+
+<head>
+    <title>Store to Door - Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto 300px;
+            background-color: lightyellow;
+        }
+
+        .loginimg img {
+            width: 40%;
+            height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .login {
+            position: relative;
+            margin: 30px auto;
+            padding: 20px 20px 20px;
+            width: 310px;
+            background-color: White;
+            border-radius: 3px;
+        }
+
+        .login h1 {
+            margin: -20px -20px 21px;
+            line-height: 40px;
+            font-size: 15px;
+            color: #555;
+            text-align: center;
+            text-shadow: 0 1px white;
+            background: #f3f3f3;
+            border-bottom: 3px 3px 0 0;
+            background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+            background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+            background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+            background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+            -webkit-box-shadow: 0 1px whitesmoke;
+            box-shadow: 0 1px whitesmoke;
+        }
+
+        .login p {
+            margin: 20px 0 0;
+        }
+
+        .login input[type=text], .login input[type=password] {
+            width: 278px;
+        }
+
+        .submit {
+            text-align: right;
+        }
+
+        input[type=submit] {
+            text-align: right;
+            padding: 0 18px;
+            height: 29px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #527881;
+            text-shadow: 0 1px #e3f1f1;
+            background: #cde5ef;
+            border: 1px solid;
+            border-color: #b4ccce #b3c0c8 #9eb9c2;
+            border-radius: 16px;
+            outline: 0;
+        }
+
+        .input {
+            margin: 5px;
+            padding: 0 10px;
+            width: 200px;
+            height: 34px;
+            color: #404040;
+            background: white;
+            border: 1px solid;
+            border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+            border-radius: 2px;
+            outline: 5px solid #eff4f7;
+        }
+
+        .signup {
+            text-align: center;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    
+<header>
+        <div class="name">
+            <h1>Store to Door</h1>
+        </div>
+
+        <div class="navbar">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.php">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="cart.php">Shopping Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="loginimg">
+            <img src="images/grocerybag.jpg" alt="grocery bag">
+        </div>
+        <div class="login">
+            <h1>Log In to your Account</h1>
+            <form method="POST" action="login.php">
+                <input type="text" name="username" placeholder="username" class="input" required >
+                <input type="password" name="password" placeholder="password" class="input" required>
+                <p class="submit"><input type="submit" value="Log In"></p>
+            </form>
+        </div>
+        <div class="signup"> 
+            <p>Dont have an account <a href="signup.html">Sign Up</p>
+        </div>
+    </div>
+
+    <footer>
+        <img src="images/footer.jpg" alt="footer">
+    </footer>
+</body>
+
+</html>
